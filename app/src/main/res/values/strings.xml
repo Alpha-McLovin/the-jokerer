@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">The Jokerer</string>
+
+
+    <string name="appbar_icon_home_description">ga naar Home</string>
+    <string name="appbar_icon_favorites_description">ga naar Todo</string>
+</resources>
