@@ -31,7 +31,6 @@ import com.example.thejokerer.pages.homepage.HomePage
 fun AppStructure(
     navigationType: NavigationTypes,
     navController: NavHostController = rememberNavController(),
-    onLogout: () -> Unit = {},
 ) {
     // val navController = rememberNavController()
     val currentBackStack by navController.currentBackStackEntryAsState()

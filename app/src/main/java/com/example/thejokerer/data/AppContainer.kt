@@ -1,9 +1,13 @@
 package com.example.thejokerer.data
 
 import android.content.Context
+import com.example.thejokerer.data.database.JokeDb
 import com.example.thejokerer.network.JokeApiService
 import com.example.thejokerer.network.NetworkConnectionInterceptor
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import kotlinx.serialization.json.Json
 import retrofit2.Retrofit
 
 interface AppContainer {
@@ -19,10 +23,15 @@ class DefaultAppContainer(private val context: Context) : AppContainer {
         .build()
 
 
+
+
     private val baseUrl = "https://v2.jokeapi.dev/joke/"
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(
-            Json.asConverterFactory("application/json".toMediaType()),
+//            Json.asConverterFactory("application/json".toMediaType()),
+            Json{isLenient = true
+            ignoreUnknownKeys = true}.asConverterFactory("application/json".toMediaType())
+
         )
         .baseUrl(baseUrl)
         .client(client)
@@ -32,12 +41,7 @@ class DefaultAppContainer(private val context: Context) : AppContainer {
         retrofit.create(JokeApiService::class.java)
     }
 
-    /*
-    override val tasksRepository: TasksRepository by lazy {
-        ApiTasksRepository(retrofitService)
-    }
-    */
     override val jokeRepository: JokeRepository by lazy {
-        CachingTasksRepository(TaskDb.getDatabase(context = context).taskDao(), retrofitService, context)
+        CachingJokesRepository(JokeDb.getDatabase(context = context).jokeDao(), retrofitService, context)
     }
 }

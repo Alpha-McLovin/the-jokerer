@@ -18,7 +18,7 @@ interface JokeDao {
     suspend fun delete(item: dbJoke)
 
     @Query("SELECT * from jokes WHERE joke = :joke")
-    fun getItem(name: String): Flow<dbJoke>
+    fun getItem(joke: String): Flow<dbJoke>
 
     @Query("SELECT * from jokes ORDER BY joke ASC")
     fun getAllItems(): Flow<List<dbJoke>>

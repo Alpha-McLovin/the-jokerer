@@ -8,8 +8,10 @@ import com.example.thejokerer.data.database.asDbJoke
 import com.example.thejokerer.data.database.asDomainJoke
 import com.example.thejokerer.data.database.asDomainJokes
 import com.example.thejokerer.model.Joke
+import com.example.thejokerer.network.ApiJoke
 import com.example.thejokerer.network.JokeApiService
-import com.example.thejokerer.network.getJokesAsFlow
+import com.example.thejokerer.network.asDomainObject
+
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
@@ -22,7 +24,7 @@ interface JokeRepository {
     fun getFavoriteJokes(): Flow<List<Joke>>
 
     // get a new joke from the API
-    fun getNewJoke(id: String): Joke
+    suspend fun getNewJoke(): Joke
 
     suspend fun insertFavoriteJoke(joke: Joke)
     suspend fun deleteFavoriteJoke(joke: Joke)
@@ -40,11 +42,8 @@ class CachingJokesRepository(private val jokeDao: JokeDao, private val jokeApiSe
 
     }
 
-    override fun getNewJoke(name: String): Joke {
-        return jokeDao.getItem(name).map {
-            it.asDomainJoke()
-        }
-    }
+    override suspend fun getNewJoke() : Joke = jokeApiService.getJoke().asDomainObject()
+
 
     override suspend fun insertFavoriteJoke(joke: Joke) {
         jokeDao.delete(joke.asDbJoke())
