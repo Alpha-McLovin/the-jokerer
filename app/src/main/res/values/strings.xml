@@ -4,4 +4,29 @@
 
     <string name="appbar_icon_home_description">ga naar Home</string>
     <string name="appbar_icon_favorites_description">ga naar Todo</string>
+
+<!--    Strings voor homepage   -->
+
+    <!-- alternative screens -->
+    <string name="loading_icon"> Loading Icon </string>
+    <string name="loading_message"> Hold on we\'re loading in a joke&#8230; </string>
+    <string name="error_icon"> Error Icon </string>
+    <string name="error_message"> Oops, something went wrong&#8230;
+Maybe this spaghetti code is the Joke after all? </string>
+    <string name="no_internet_icon"> No Connection Icon</string>
+    <string name="no_internet_message"> No internet connection. Please connect to a network so that you can generate some funny jokes. </string>
+    <string name="refresh_icon"> Refresh Icon </string>
+    <string name="refresh_message"> Reload </string>
+
+    <!-- normal screen -->
+    <string name="home_page_title"> Welcome! </string>
+    <string name="home_page_introduction"> Enjoy some of our most funniest jokes and take a laughing break. </string>
+    <string name="dislike_button">Dislike Button</string>
+    <string name="like_button">Like Button</string>
+    <string name="random_joke">Random Joke</string>
+    <string name="it_joke">IT joke</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="pun">Pun</string>
+    <string name="dark_joke">Dark Joke</string>
+
 </resources>
