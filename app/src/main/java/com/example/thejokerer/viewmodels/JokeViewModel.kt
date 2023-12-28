@@ -28,6 +28,79 @@ class JokeViewModel ( private val jokeRepository: JokeRepository) : ViewModel() 
         getApiJoke()
     }
 
+
+    fun getApiJoke() {
+        viewModelScope.launch {
+            apiState = try {
+                isFavoriteState = false
+                JokeApiState.Success(jokeRepository.getNewJoke())
+            } catch (ex: IOException) {
+                JokeApiState.NoInternet
+            } catch (e: Exception) {
+                Log.e("JokeViewModel", e.message.toString())
+                JokeApiState.Error
+            }
+        }
+    }
+
+    fun getApiItJoke() {
+        viewModelScope.launch {
+            apiState = try {
+                isFavoriteState = false
+                JokeApiState.Success(jokeRepository.getNewItJoke())
+            } catch (ex: IOException) {
+                JokeApiState.NoInternet
+            } catch (e: Exception) {
+                Log.e("JokeViewModel", e.message.toString())
+                JokeApiState.Error
+            }
+        }
+    }
+
+    fun getApiDarkJoke() {
+        viewModelScope.launch {
+            apiState = try {
+                isFavoriteState = false
+                JokeApiState.Success(jokeRepository.getNewDarkJoke())
+            } catch (ex: IOException) {
+                JokeApiState.NoInternet
+            } catch (e: Exception) {
+                Log.e("JokeViewModel", e.message.toString())
+                JokeApiState.Error
+            }
+        }
+    }
+
+    fun getApiPun() {
+        viewModelScope.launch {
+            apiState = try {
+                isFavoriteState = false
+                JokeApiState.Success(jokeRepository.getNewPun())
+            } catch (ex: IOException) {
+                JokeApiState.NoInternet
+            } catch (e: Exception) {
+                Log.e("JokeViewModel", e.message.toString())
+                JokeApiState.Error
+            }
+        }
+    }
+
+    fun getApiMiscelleaneous() {
+        viewModelScope.launch {
+            apiState = try {
+                isFavoriteState = false
+                JokeApiState.Success(jokeRepository.getNewMiscellaneous())
+            } catch (ex: IOException) {
+                JokeApiState.NoInternet
+            } catch (e: Exception) {
+                Log.e("JokeViewModel", e.message.toString())
+                JokeApiState.Error
+            }
+        }
+    }
+
+
+
     fun addFavorite(joke: Joke) {
         viewModelScope.launch {
             try {
@@ -50,16 +123,13 @@ class JokeViewModel ( private val jokeRepository: JokeRepository) : ViewModel() 
         }
     }
 
-    fun getApiJoke() {
+
+    fun getFavoriteJokes(){
         viewModelScope.launch {
-            apiState = try {
-                isFavoriteState = false
-                JokeApiState.Success(jokeRepository.getNewJoke())
-            } catch (ex: IOException) {
-                JokeApiState.NoInternet
+            try {
+                jokeRepository.getFavoriteJokes()
             } catch (e: Exception) {
                 Log.e("JokeViewModel", e.message.toString())
-                JokeApiState.Error
             }
         }
     }
