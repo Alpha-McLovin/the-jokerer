@@ -131,13 +131,13 @@ fun AppStructure(
                         Destinations.Home.name,
                         enterTransition = {
                             slideIntoContainer(
-                                AnimatedContentTransitionScope.SlideDirection.Up,
+                                AnimatedContentTransitionScope.SlideDirection.Down,
                                 animationSpec = tween(300),
                             )
                         },
                         exitTransition = {
                             slideOutOfContainer(
-                                AnimatedContentTransitionScope.SlideDirection.Down,
+                                AnimatedContentTransitionScope.SlideDirection.Up,
                                 animationSpec = tween(300),
                             )
                         },
@@ -148,13 +148,13 @@ fun AppStructure(
                         Destinations.Favorites.name,
                         enterTransition = {
                             slideIntoContainer(
-                                AnimatedContentTransitionScope.SlideDirection.Down,
+                                AnimatedContentTransitionScope.SlideDirection.Up,
                                 animationSpec = tween(300),
                             )
                         },
                         exitTransition = {
                             slideOutOfContainer(
-                                AnimatedContentTransitionScope.SlideDirection.Up,
+                                AnimatedContentTransitionScope.SlideDirection.Down,
                                 animationSpec = tween(300),
                             )
                         },

@@ -1,6 +1,7 @@
 package com.example.thejokerer.pages.favorites
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
@@ -15,7 +16,7 @@ fun FavoritesPage() {
     val jokeViewModel: JokeViewModel = viewModel(factory = JokeViewModel.Factory)
 
 
-    Column (modifier = Modifier.fillMaxWidth(),
+    Column (modifier = Modifier.fillMaxSize(),
     ){
         Text(text = "Favorites page")
 

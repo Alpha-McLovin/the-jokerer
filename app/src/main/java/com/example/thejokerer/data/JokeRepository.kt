@@ -1,22 +1,14 @@
 package com.example.thejokerer.data
 
 import android.content.Context
-import androidx.work.WorkInfo
-import androidx.work.WorkManager
 import com.example.thejokerer.data.database.JokeDao
 import com.example.thejokerer.data.database.asDbJoke
-import com.example.thejokerer.data.database.asDomainJoke
 import com.example.thejokerer.data.database.asDomainJokes
 import com.example.thejokerer.model.Joke
-import com.example.thejokerer.network.ApiJoke
 import com.example.thejokerer.network.JokeApiService
 import com.example.thejokerer.network.asDomainObject
-
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
-import java.net.SocketTimeoutException
-import java.util.UUID
 
 interface JokeRepository {
 
@@ -25,7 +17,6 @@ interface JokeRepository {
 
     // get a new joke from the API
     suspend fun getNewJoke(): Joke
-
     suspend fun getNewPun(): Joke
     suspend fun getNewItJoke(): Joke
     suspend fun getNewDarkJoke(): Joke

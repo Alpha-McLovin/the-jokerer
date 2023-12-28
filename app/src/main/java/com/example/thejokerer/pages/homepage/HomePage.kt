@@ -1,6 +1,7 @@
 package com.example.thejokerer.pages.homepage
 
 import android.content.ClipData.Item
+import android.content.res.Configuration
 import android.icu.text.CaseMap.Title
 import android.util.Log
 import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.End
@@ -21,10 +22,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccessTime
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.WifiOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -36,6 +40,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.res.stringResource
@@ -59,52 +64,141 @@ fun HomePage(){
 
         when (apiState) {
             is JokeApiState.Loading -> {
-                Text(text = "Hold on we're loading in a joke...")
+                Row (modifier = Modifier
+                    .fillMaxSize()
+                    .padding(15.dp)) {
+                   Icon(
+                       Icons.Default.AccessTime,
+                       contentDescription = stringResource(R.string.loading_icon),
+                       tint = MaterialTheme.colorScheme.secondary,
+                       modifier = Modifier
+                           .padding(horizontal = 10.dp)
+                           .size(dimensionResource(id = R.dimen.notif_size)),
+                   )
+                    Text(
+                        text = stringResource(R.string.loading_message),
+                        color = MaterialTheme.colorScheme.secondary,
+                    )
+                }
             }
 
             JokeApiState.Error -> {
-                Text(text = "Oops, something went wrong... Maybe this spaghetti code is the Joke after all?")
+                Row (modifier = Modifier
+                    .fillMaxSize()
+                    .padding(15.dp)) {
+                    Icon(
+                        Icons.Default.Error,
+                        contentDescription = stringResource(R.string.error_icon),
+                        tint = MaterialTheme.colorScheme.secondary,
+                        modifier = Modifier
+                            .padding(horizontal = 10.dp)
+                            .size(dimensionResource(id = R.dimen.notif_size)),
+                    )
+                    Text(
+                        text = stringResource(R.string.error_message),
+                        color = MaterialTheme.colorScheme.secondary,
+                    )
+                }
             }
 
             JokeApiState.NoInternet -> {
-                Text(text = "No internet connection. Please connect so that you can generate jokes")
-            }
-
-            is JokeApiState.Success -> {
-                LazyColumn (modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.SpaceBetween
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(15.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
 
-
-                    
-                    item {
-
-                        Text(
-                            text = "Welcome!",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 30.sp,
-                            color = MaterialTheme.colorScheme.secondary
+                    Row (modifier = Modifier.fillMaxWidth()){
+                        Icon(
+                            Icons.Default.WifiOff,
+                            contentDescription = stringResource(R.string.no_internet_icon),
+                            tint = MaterialTheme.colorScheme.secondary,
+                            modifier = Modifier
+                                .padding(horizontal = 10.dp)
+                                .size(dimensionResource(id = R.dimen.notif_size)),
                         )
                         Text(
-                            text = "Enjoy some of our most funniest jokes and take a laughing break.",
-                            color = MaterialTheme.colorScheme.secondary
-                        )
-                        JokeBox(
-                            joke = apiState.joke,
-                            isFavorite = isFavorite,
-                            likeJoke = { jokeViewModel.addFavorite(apiState.joke) },
-                            dislikeJoke = { jokeViewModel.removeFavorite(apiState.joke) }
+                            text = stringResource(R.string.no_internet_message),
+                            color = MaterialTheme.colorScheme.secondary,
                         )
                     }
 
-                    item {
-                        JokeButtons(
-                            getRandomJoke = { jokeViewModel.getApiJoke() },
-                            getItJoke = { jokeViewModel.getApiItJoke() },
-                            getDarkJoke = { jokeViewModel.getApiDarkJoke() },
-                            getPun = { jokeViewModel.getApiPun() },
-                            getMiscellaneous = { jokeViewModel.getApiMiscelleaneous() }
-                        )
+                    Button(
+                        onClick = { jokeViewModel.getApiJoke() } ,
+                        modifier = Modifier
+                            .width(120.dp)
+                            .padding(top = 10.dp)
+                    ) {
+                        Row( modifier = Modifier.fillMaxWidth() ,
+                            horizontalArrangement = Arrangement.SpaceBetween ) {
+                            Icon(Icons.Default.Refresh , contentDescription = stringResource(R.string.refresh_icon))
+                            Text(text = stringResource(R.string.refresh_message))
+                        }
+                    }
+                }
+            }
+
+            is JokeApiState.Success -> {
+
+                val configuration = LocalConfiguration.current
+                when (configuration.orientation) {
+                    Configuration.ORIENTATION_LANDSCAPE -> {
+                        Row {
+
+                            JokeBox(
+                                modifier = Modifier.fillMaxWidth(0.7f),
+                                joke = apiState.joke,
+                                isFavorite = isFavorite,
+                                likeJoke = { jokeViewModel.addFavorite(apiState.joke) },
+                                dislikeJoke = { jokeViewModel.removeFavorite(apiState.joke) }
+                            )
+
+                            JokeButtonsLandscape(
+                                getRandomJoke = { jokeViewModel.getApiJoke() },
+                                getItJoke = { jokeViewModel.getApiItJoke() },
+                                getDarkJoke = { jokeViewModel.getApiDarkJoke() },
+                                getPun = { jokeViewModel.getApiPun() },
+                                getMiscellaneous = { jokeViewModel.getApiMiscelleaneous()}
+                            )
+                        }
+                    }
+
+                    else -> {
+                        LazyColumn (modifier = Modifier.fillMaxSize(),
+                            verticalArrangement = Arrangement.SpaceBetween
+                        ) {
+
+                            item {
+                                Text(
+                                    text = stringResource(R.string.home_page_title),
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 30.sp,
+                                    color = MaterialTheme.colorScheme.secondary
+                                )
+                                Text(
+                                    text = stringResource(R.string.home_page_introduction),
+                                    color = MaterialTheme.colorScheme.secondary
+                                )
+                                JokeBox(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    joke = apiState.joke,
+                                    isFavorite = isFavorite,
+                                    likeJoke = { jokeViewModel.addFavorite(apiState.joke) },
+                                    dislikeJoke = { jokeViewModel.removeFavorite(apiState.joke) }
+                                )
+                            }
+
+                            item {
+                                JokeButtons(
+                                    getRandomJoke = { jokeViewModel.getApiJoke() },
+                                    getItJoke = { jokeViewModel.getApiItJoke() },
+                                    getDarkJoke = { jokeViewModel.getApiDarkJoke() },
+                                    getPun = { jokeViewModel.getApiPun() },
+                                    getMiscellaneous = { jokeViewModel.getApiMiscelleaneous() }
+                                )
+                            }
+                        }
                     }
                 }
             }

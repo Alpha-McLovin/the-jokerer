@@ -22,18 +22,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
 @Composable
-fun JokeBox(joke: Joke, isFavorite : Boolean, likeJoke : () -> Unit, dislikeJoke : () -> Unit){
+fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : () -> Unit, dislikeJoke : () -> Unit){
 
     Box(
-        modifier = Modifier
+        modifier =
+        modifier
             .padding(10.dp)
             .clip(RoundedCornerShape(10.dp))
-            .fillMaxWidth()
             .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center,
     ) {
@@ -54,21 +55,16 @@ fun JokeBox(joke: Joke, isFavorite : Boolean, likeJoke : () -> Unit, dislikeJoke
                     IconButton(onClick = dislikeJoke ) {
                         Icon(
                             Icons.Default.Favorite,
-                            contentDescription = "unlikelikebutton",
+                            contentDescription = stringResource(R.string.dislike_button),
                             tint = MaterialTheme.colorScheme.onPrimary,
-                            modifier = Modifier
-
-                                .size(
-                                    dimensionResource(id = R.dimen.icon_size)
-
-                                ),
+                            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size)),
                         )
                     }
                 } else {
                     IconButton(onClick = likeJoke ) {
                         Icon(
                             Icons.Default.FavoriteBorder,
-                            contentDescription = "likebutton",
+                            contentDescription = stringResource(R.string.like_button),
                             tint = MaterialTheme.colorScheme.onPrimary,
                             modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size)),
                         )
