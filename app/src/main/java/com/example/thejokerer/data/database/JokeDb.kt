@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 /**
  * Database class with a singleton Instance object.
  */
-@Database(entities = [dbJoke::class], version = 1, exportSchema = false)
+@Database(entities = [DbJoke::class], version = 3)
 abstract class JokeDb : RoomDatabase() {
 
     abstract fun jokeDao(): JokeDao

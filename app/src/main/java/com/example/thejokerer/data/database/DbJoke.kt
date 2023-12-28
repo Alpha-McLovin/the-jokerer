@@ -5,28 +5,29 @@ import androidx.room.PrimaryKey
 import com.example.thejokerer.model.Joke
 
 @Entity(tableName = "jokes")
-data class dbJoke(
+data class DbJoke(
     @PrimaryKey
     val joke: String = "",
     val favorite: Boolean = false,
 
     )
 
-fun dbJoke.asDomainJoke(): Joke {
+
+fun DbJoke.asDomainJoke(): Joke {
     return Joke(
         this.joke,
         this.favorite,
     )
 }
 
-fun Joke.asDbJoke(): dbJoke {
-    return dbJoke(
+fun Joke.asDbJoke(): DbJoke {
+    return DbJoke(
         joke = this.joke,
         favorite = this.favorite,
     )
 }
 
-fun List<dbJoke>.asDomainJokes(): List<Joke> {
+fun List<DbJoke>.asDomainJokes(): List<Joke> {
     var jokeList = this.map {
         Joke(it.joke, it.favorite)
     }

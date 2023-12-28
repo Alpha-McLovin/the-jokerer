@@ -10,15 +10,18 @@ interface JokeApiService {
 
     // suspend is added to force the user to call this in a coroutine scope
     @GET("any?type=single")
-    suspend fun getJoke(string: String) : ApiJoke
-}
+    suspend fun getJoke() : ApiJoke
 
-// helper function
-//fun JokeApiService.getJokesAsFlow(): Flow<List<ApiJoke>> = flow {
-//    try {
-//        emit(getJokes())
-//    }
-//    catch(e: Exception){
-//        Log.e("API", "getJokesAsFlow: "+e.stackTraceToString(), )
-//    }
-//}
+    @GET("Pun?type=single")
+    suspend fun getPun() : ApiJoke
+
+    @GET("Programming?type=single")
+    suspend fun getItJoke() : ApiJoke
+
+    @GET("Miscellaneous?type=single")
+    suspend fun getMiscellaneousJoke() : ApiJoke
+
+    @GET("Dark?type=single")
+    suspend fun getDarkJoke() : ApiJoke
+
+}

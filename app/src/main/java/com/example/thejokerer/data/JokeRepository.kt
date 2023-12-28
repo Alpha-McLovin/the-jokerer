@@ -26,6 +26,11 @@ interface JokeRepository {
     // get a new joke from the API
     suspend fun getNewJoke(): Joke
 
+    suspend fun getNewPun(): Joke
+    suspend fun getNewItJoke(): Joke
+    suspend fun getNewDarkJoke(): Joke
+    suspend fun getNewMiscellaneous(): Joke
+
     suspend fun insertFavoriteJoke(joke: Joke)
     suspend fun deleteFavoriteJoke(joke: Joke)
 
@@ -43,15 +48,18 @@ class CachingJokesRepository(private val jokeDao: JokeDao, private val jokeApiSe
     }
 
     override suspend fun getNewJoke() : Joke = jokeApiService.getJoke().asDomainObject()
+    override suspend fun getNewPun(): Joke = jokeApiService.getPun().asDomainObject()
 
+    override suspend fun getNewItJoke(): Joke = jokeApiService.getItJoke().asDomainObject()
+
+    override suspend fun getNewDarkJoke(): Joke = jokeApiService.getDarkJoke().asDomainObject()
+
+    override suspend fun getNewMiscellaneous(): Joke = jokeApiService.getMiscellaneousJoke().asDomainObject()
 
     override suspend fun insertFavoriteJoke(joke: Joke) {
-        jokeDao.delete(joke.asDbJoke())
+        jokeDao.insert(joke.asDbJoke())
     }
     override suspend fun deleteFavoriteJoke(joke: Joke) {
         jokeDao.delete(joke.asDbJoke())
     }
-
-
-
 }

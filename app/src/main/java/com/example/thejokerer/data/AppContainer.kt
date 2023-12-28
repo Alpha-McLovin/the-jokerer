@@ -23,14 +23,15 @@ class DefaultAppContainer(private val context: Context) : AppContainer {
         .build()
 
 
-
-
     private val baseUrl = "https://v2.jokeapi.dev/joke/"
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(
 //            Json.asConverterFactory("application/json".toMediaType()),
-            Json{isLenient = true
-            ignoreUnknownKeys = true}.asConverterFactory("application/json".toMediaType())
+            Json{
+                isLenient = true
+                ignoreUnknownKeys = true
+            }
+            .asConverterFactory("application/json".toMediaType())
 
         )
         .baseUrl(baseUrl)
