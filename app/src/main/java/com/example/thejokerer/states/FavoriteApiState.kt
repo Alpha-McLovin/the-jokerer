@@ -1,7 +1,7 @@
 package com.example.thejokerer.states
 
-sealed interface FavoriteApiState {
-    object Error : FavoriteApiState
-    object Loading : FavoriteApiState
-    object Success : FavoriteApiState
+sealed interface FavoriteState {
+    object Error : FavoriteState
+    object Loading : FavoriteState
+    object Success : FavoriteState
 }

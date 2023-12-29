@@ -29,4 +29,13 @@ Maybe this spaghetti code is the Joke after all? </string>
     <string name="pun">Pun</string>
     <string name="dark_joke">Dark Joke</string>
 
+
+<!--   strings voor favorite screen-->
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="confirmation_message">Are you sure you want to unfavorite this joke?</string>
+    <string name="favorites_empty_message">Looks like your favorites list is Empty... \nLike some jokes to find them here!</string>
+    <string name="favorites_empy_icon">Empty Icon</string>
+    <string name="favorite_jokes_title">Your Favorite Jokes</string>
+
 </resources>

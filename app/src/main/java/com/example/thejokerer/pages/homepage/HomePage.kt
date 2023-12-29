@@ -2,11 +2,7 @@ package com.example.thejokerer.pages.homepage
 
 import android.content.ClipData.Item
 import android.content.res.Configuration
-import android.icu.text.CaseMap.Title
-import android.util.Log
-import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.End
-import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.scrollable
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -50,6 +46,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
+import com.example.thejokerer.pages.shared.ErrorPage
+import com.example.thejokerer.pages.shared.LoadingPage
+import com.example.thejokerer.pages.shared.Title
 import com.example.thejokerer.states.JokeApiState
 import com.example.thejokerer.viewmodels.JokeViewModel
 
@@ -64,41 +63,11 @@ fun HomePage(){
 
         when (apiState) {
             is JokeApiState.Loading -> {
-                Row (modifier = Modifier
-                    .fillMaxSize()
-                    .padding(15.dp)) {
-                   Icon(
-                       Icons.Default.AccessTime,
-                       contentDescription = stringResource(R.string.loading_icon),
-                       tint = MaterialTheme.colorScheme.secondary,
-                       modifier = Modifier
-                           .padding(horizontal = 10.dp)
-                           .size(dimensionResource(id = R.dimen.notif_size)),
-                   )
-                    Text(
-                        text = stringResource(R.string.loading_message),
-                        color = MaterialTheme.colorScheme.secondary,
-                    )
-                }
+                LoadingPage()
             }
 
             JokeApiState.Error -> {
-                Row (modifier = Modifier
-                    .fillMaxSize()
-                    .padding(15.dp)) {
-                    Icon(
-                        Icons.Default.Error,
-                        contentDescription = stringResource(R.string.error_icon),
-                        tint = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier
-                            .padding(horizontal = 10.dp)
-                            .size(dimensionResource(id = R.dimen.notif_size)),
-                    )
-                    Text(
-                        text = stringResource(R.string.error_message),
-                        color = MaterialTheme.colorScheme.secondary,
-                    )
-                }
+                ErrorPage()
             }
 
             JokeApiState.NoInternet -> {
@@ -170,12 +139,7 @@ fun HomePage(){
                         ) {
 
                             item {
-                                Text(
-                                    text = stringResource(R.string.home_page_title),
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 30.sp,
-                                    color = MaterialTheme.colorScheme.secondary
-                                )
+                                Title(text = stringResource(R.string.home_page_title))
                                 Text(
                                     text = stringResource(R.string.home_page_introduction),
                                     color = MaterialTheme.colorScheme.secondary

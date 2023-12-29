@@ -13,7 +13,12 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.thejokerer.JokeApplication
 import com.example.thejokerer.data.JokeRepository
 import com.example.thejokerer.model.Joke
+import com.example.thejokerer.states.FavoriteState
 import com.example.thejokerer.states.JokeApiState
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import okio.IOException
 
@@ -21,11 +26,36 @@ class JokeViewModel ( private val jokeRepository: JokeRepository) : ViewModel() 
     var apiState: JokeApiState by mutableStateOf(JokeApiState.Loading)
         private set
 
+    var favoriteState: FavoriteState by mutableStateOf(FavoriteState.Loading)
+        private set
+
     var isFavoriteState: Boolean by mutableStateOf(false)
         private set
 
+    lateinit var uiListState: StateFlow<List<Joke>>
+
     init {
         getApiJoke()
+        getFavoriteJokes()
+    }
+
+
+    fun getFavoriteJokes(){
+        viewModelScope.launch {
+
+            favoriteState = try {
+                uiListState = jokeRepository.getFavoriteJokes()
+                    .stateIn(
+                    scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5_000L),
+                    initialValue = listOf(),
+                )
+                FavoriteState.Success
+            } catch (e: IOException){
+                Log.e("favorite jokes" , e.message.toString())
+                FavoriteState.Error
+            }
+        }
     }
 
 
@@ -124,15 +154,7 @@ class JokeViewModel ( private val jokeRepository: JokeRepository) : ViewModel() 
     }
 
 
-    fun getFavoriteJokes(){
-        viewModelScope.launch {
-            try {
-                jokeRepository.getFavoriteJokes()
-            } catch (e: Exception) {
-                Log.e("JokeViewModel", e.message.toString())
-            }
-        }
-    }
+
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {

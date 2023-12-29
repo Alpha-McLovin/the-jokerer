@@ -1,6 +1,7 @@
 package com.example.thejokerer.data
 
 import android.content.Context
+import androidx.room.Room
 import com.example.thejokerer.data.database.JokeDb
 import com.example.thejokerer.network.JokeApiService
 import com.example.thejokerer.network.NetworkConnectionInterceptor
@@ -16,6 +17,10 @@ interface AppContainer {
 
 // container that takes care of dependencies
 class DefaultAppContainer(private val context: Context) : AppContainer {
+
+    override val jokeRepository: JokeRepository by lazy {
+        CachingJokesRepository(jokeDb.jokeDao(), retrofitService, context)
+    }
 
     private val networkCheck = NetworkConnectionInterceptor(context)
     private val client = OkHttpClient.Builder()
@@ -42,7 +47,17 @@ class DefaultAppContainer(private val context: Context) : AppContainer {
         retrofit.create(JokeApiService::class.java)
     }
 
-    override val jokeRepository: JokeRepository by lazy {
-        CachingJokesRepository(JokeDb.getDatabase(context = context).jokeDao(), retrofitService, context)
+//    override val jokeRepository: JokeRepository by lazy {
+//        CachingJokesRepository(JokeDb.getDatabase(context = context).jokeDao(), retrofitService, context)
+//    }
+
+    private val jokeDb : JokeDb by lazy{
+        Room.databaseBuilder(
+            context,
+            JokeDb::class.java,
+            "joke_database",
+        ).fallbackToDestructiveMigration()
+            .build()
+
     }
 }

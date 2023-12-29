@@ -1,4 +1,4 @@
-package com.example.thejokerer.pages.homepage
+package com.example.thejokerer.pages.favorites
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,7 +20,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -28,12 +27,13 @@ import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
 @Composable
-fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : () -> Unit, dislikeJoke : () -> Unit){
+fun FavoriteJokeBox(joke: Joke , showConfirmation : () -> Unit){
 
     Box(
         modifier =
-        modifier
+        Modifier
             .padding(10.dp)
+            .fillMaxWidth()
             .clip(RoundedCornerShape(10.dp))
             .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center,
@@ -50,29 +50,15 @@ fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : ()
 
             Column(modifier = Modifier.padding( start = 3.dp),
                 verticalArrangement = Arrangement.Top){
-
-                if (isFavorite){
-                    IconButton(onClick = dislikeJoke ) {
-                        Icon(
-                            Icons.Default.Favorite,
-                            contentDescription = stringResource(R.string.dislike_button),
-                            tint = MaterialTheme.colorScheme.onPrimary,
-                            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size)),
-                        )
-                    }
-                } else {
-
-                    IconButton(onClick = likeJoke ) {
-                        Icon(
-                            Icons.Default.FavoriteBorder,
-                            contentDescription = stringResource(R.string.like_button),
-                            tint = MaterialTheme.colorScheme.onPrimary,
-                            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size)),
-                        )
-                    }
+                IconButton(onClick = showConfirmation ) {
+                    Icon(
+                        Icons.Default.Favorite,
+                        contentDescription = stringResource(R.string.dislike_button),
+                        tint = MaterialTheme.colorScheme.onPrimary,
+                        modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size)),
+                    )
                 }
             }
         }
     }
-
 }
