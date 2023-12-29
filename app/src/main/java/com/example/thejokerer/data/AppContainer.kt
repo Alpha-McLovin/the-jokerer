@@ -6,9 +6,9 @@ import com.example.thejokerer.data.database.JokeDb
 import com.example.thejokerer.network.JokeApiService
 import com.example.thejokerer.network.NetworkConnectionInterceptor
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
-import kotlinx.serialization.json.Json
 import retrofit2.Retrofit
 
 interface AppContainer {
@@ -32,11 +32,11 @@ class DefaultAppContainer(private val context: Context) : AppContainer {
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(
 //            Json.asConverterFactory("application/json".toMediaType()),
-            Json{
+            Json {
                 isLenient = true
                 ignoreUnknownKeys = true
             }
-            .asConverterFactory("application/json".toMediaType())
+                .asConverterFactory("application/json".toMediaType()),
 
         )
         .baseUrl(baseUrl)
@@ -47,17 +47,12 @@ class DefaultAppContainer(private val context: Context) : AppContainer {
         retrofit.create(JokeApiService::class.java)
     }
 
-//    override val jokeRepository: JokeRepository by lazy {
-//        CachingJokesRepository(JokeDb.getDatabase(context = context).jokeDao(), retrofitService, context)
-//    }
-
-    private val jokeDb : JokeDb by lazy{
+    private val jokeDb: JokeDb by lazy {
         Room.databaseBuilder(
             context,
             JokeDb::class.java,
             "joke_database",
         ).fallbackToDestructiveMigration()
             .build()
-
     }
 }

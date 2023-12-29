@@ -9,16 +9,7 @@ data class DbJoke(
     @PrimaryKey
     val joke: String = "",
     val favorite: Boolean = false,
-
-    )
-
-
-fun DbJoke.asDomainJoke(): Joke {
-    return Joke(
-        this.joke,
-        this.favorite,
-    )
-}
+)
 
 fun Joke.asDbJoke(): DbJoke {
     return DbJoke(

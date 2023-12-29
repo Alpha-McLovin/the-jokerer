@@ -24,21 +24,18 @@ interface JokeRepository {
 
     suspend fun insertFavoriteJoke(joke: Joke)
     suspend fun deleteFavoriteJoke(joke: Joke)
-
 }
 
 class CachingJokesRepository(private val jokeDao: JokeDao, private val jokeApiService: JokeApiService, context: Context) : JokeRepository {
 
     // this repo contains logic to get the jokes
     override fun getFavoriteJokes(): Flow<List<Joke>> {
-
         return jokeDao.getAllItems().map {
             it.asDomainJokes()
         }
-
     }
 
-    override suspend fun getNewJoke() : Joke = jokeApiService.getJoke().asDomainObject()
+    override suspend fun getNewJoke(): Joke = jokeApiService.getJoke().asDomainObject()
     override suspend fun getNewPun(): Joke = jokeApiService.getPun().asDomainObject()
 
     override suspend fun getNewItJoke(): Joke = jokeApiService.getItJoke().asDomainObject()

@@ -18,13 +18,12 @@ import com.example.thejokerer.R
 
 @Composable
 fun JokeButtons(
-    getRandomJoke : () -> Unit,
-    getItJoke : () -> Unit,
-    getDarkJoke : () -> Unit,
-    getPun : () -> Unit,
-    getMiscellaneous : () -> Unit,
-){
-
+    getRandomJoke: () -> Unit,
+    getItJoke: () -> Unit,
+    getDarkJoke: () -> Unit,
+    getPun: () -> Unit,
+    getMiscellaneous: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -33,44 +32,47 @@ fun JokeButtons(
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
             Button(
-                onClick =  getRandomJoke  ,
-                modifier = Modifier.width(150.dp)
+                onClick = getRandomJoke,
+                modifier = Modifier.width(150.dp),
             ) {
                 Text(text = stringResource(R.string.random_joke))
             }
         }
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
+            horizontalArrangement = Arrangement.SpaceAround,
         ) {
             Button(
-                onClick =  getItJoke ,
-                modifier = Modifier.width(150.dp)) {
+                onClick = getItJoke,
+                modifier = Modifier.width(150.dp),
+            ) {
                 Text(text = stringResource(R.string.it_joke))
             }
 
             Button(
-                onClick =  getMiscellaneous ,
-                modifier = Modifier.width(150.dp)
+                onClick = getMiscellaneous,
+                modifier = Modifier.width(150.dp),
             ) {
                 Text(text = stringResource(R.string.miscellaneous))
             }
         }
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
+            horizontalArrangement = Arrangement.SpaceAround,
         ) {
-            Button(onClick =  getPun ,
-                modifier = Modifier.width(150.dp)
+            Button(
+                onClick = getPun,
+                modifier = Modifier.width(150.dp),
             ) {
                 Text(text = stringResource(R.string.pun))
             }
 
-            Button(onClick =  getDarkJoke ,
-                modifier = Modifier.width(150.dp)
+            Button(
+                onClick = getDarkJoke,
+                modifier = Modifier.width(150.dp),
             ) {
                 Text(text = stringResource(R.string.dark_joke))
             }
@@ -80,52 +82,53 @@ fun JokeButtons(
 
 @Composable
 fun JokeButtonsLandscape(
-    getRandomJoke : () -> Unit,
-    getItJoke : () -> Unit,
-    getDarkJoke : () -> Unit,
-    getPun : () -> Unit,
-    getMiscellaneous : () -> Unit,
-){
-
+    getRandomJoke: () -> Unit,
+    getItJoke: () -> Unit,
+    getDarkJoke: () -> Unit,
+    getPun: () -> Unit,
+    getMiscellaneous: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
             .padding(vertical = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.SpaceBetween,
     ) {
+        Button(
+            onClick = getRandomJoke,
+            modifier = Modifier.width(150.dp),
+        ) {
+            Text(text = stringResource(R.string.random_joke))
+        }
 
-            Button(
-                onClick =  getRandomJoke  ,
-                modifier = Modifier.width(150.dp)
-            ) {
-                Text(text = stringResource(R.string.random_joke))
-            }
+        Button(
+            onClick = getItJoke,
+            modifier = Modifier.width(150.dp),
+        ) {
+            Text(text = stringResource(R.string.it_joke))
+        }
 
-            Button(
-                onClick =  getItJoke ,
-                modifier = Modifier.width(150.dp)) {
-                Text(text = stringResource(R.string.it_joke))
-            }
+        Button(
+            onClick = getMiscellaneous,
+            modifier = Modifier.width(150.dp),
+        ) {
+            Text(text = stringResource(R.string.miscellaneous))
+        }
 
-            Button(
-                onClick =  getMiscellaneous ,
-                modifier = Modifier.width(150.dp)
-            ) {
-                Text(text = stringResource(R.string.miscellaneous))
-            }
+        Button(
+            onClick = getPun,
+            modifier = Modifier.width(150.dp),
+        ) {
+            Text(text = stringResource(R.string.pun))
+        }
 
-            Button(onClick =  getPun ,
-                modifier = Modifier.width(150.dp)
-            ) {
-                Text(text = stringResource(R.string.pun))
-            }
-
-            Button(onClick =  getDarkJoke ,
-                modifier = Modifier.width(150.dp)
-            ) {
-                Text(text = stringResource(R.string.dark_joke))
-            }
+        Button(
+            onClick = getDarkJoke,
+            modifier = Modifier.width(150.dp),
+        ) {
+            Text(text = stringResource(R.string.dark_joke))
+        }
     }
 }

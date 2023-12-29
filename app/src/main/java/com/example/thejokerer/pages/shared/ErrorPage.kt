@@ -17,10 +17,11 @@ import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 
 @Composable
-fun ErrorPage(){
-    Row (modifier = Modifier
-        .fillMaxSize()
-        .padding(15.dp)
+fun ErrorPage() {
+    Row(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(15.dp),
     ) {
         Icon(
             Icons.Default.Error,

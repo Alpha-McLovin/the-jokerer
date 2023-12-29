@@ -20,7 +20,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -28,8 +27,7 @@ import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
 @Composable
-fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : () -> Unit, dislikeJoke : () -> Unit){
-
+fun JokeBox(modifier: Modifier, joke: Joke, isFavorite: Boolean, likeJoke: () -> Unit, dislikeJoke: () -> Unit) {
     Box(
         modifier =
         modifier
@@ -38,21 +36,24 @@ fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : ()
             .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center,
     ) {
-        Row(modifier = Modifier.padding( horizontal =  10.dp)){
-
-            Box(modifier = Modifier
-                .fillMaxWidth(0.9f)
-                .padding(vertical = 10.dp)){
-                Text(text = joke.joke,
-                    color = MaterialTheme.colorScheme.onPrimary
+        Row(modifier = Modifier.padding(horizontal = 10.dp)) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.9f)
+                    .padding(vertical = 10.dp),
+            ) {
+                Text(
+                    text = joke.joke,
+                    color = MaterialTheme.colorScheme.onPrimary,
                 )
             }
 
-            Column(modifier = Modifier.padding( start = 3.dp),
-                verticalArrangement = Arrangement.Top){
-
-                if (isFavorite){
-                    IconButton(onClick = dislikeJoke ) {
+            Column(
+                modifier = Modifier.padding(start = 3.dp),
+                verticalArrangement = Arrangement.Top,
+            ) {
+                if (isFavorite) {
+                    IconButton(onClick = dislikeJoke) {
                         Icon(
                             Icons.Default.Favorite,
                             contentDescription = stringResource(R.string.dislike_button),
@@ -61,8 +62,7 @@ fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : ()
                         )
                     }
                 } else {
-
-                    IconButton(onClick = likeJoke ) {
+                    IconButton(onClick = likeJoke) {
                         Icon(
                             Icons.Default.FavoriteBorder,
                             contentDescription = stringResource(R.string.like_button),
@@ -74,5 +74,4 @@ fun JokeBox(modifier : Modifier, joke: Joke, isFavorite : Boolean, likeJoke : ()
             }
         }
     }
-
 }

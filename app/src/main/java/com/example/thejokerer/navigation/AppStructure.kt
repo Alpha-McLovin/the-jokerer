@@ -32,7 +32,6 @@ fun AppStructure(
     navigationType: NavigationTypes,
     navController: NavHostController = rememberNavController(),
 ) {
-    // val navController = rememberNavController()
     val currentBackStack by navController.currentBackStackEntryAsState()
 
     if (navigationType == NavigationTypes.BOTTOM_NAVIGATION) {
@@ -61,7 +60,6 @@ fun AppStructure(
                 startDestination = Destinations.Home.name,
                 modifier = Modifier.padding(innerPadding).padding(horizontal = dimensionResource(R.dimen.padding_screen_borders)),
             ) {
-
                 composable(
                     Destinations.Home.name,
                     enterTransition = {
@@ -119,14 +117,13 @@ fun AppStructure(
                     )
                 },
 
-                ) { innerPadding ->
+            ) { innerPadding ->
 
                 NavHost(
                     navController = navController,
                     startDestination = Destinations.Home.name,
                     modifier = Modifier.padding(innerPadding).padding(horizontal = dimensionResource(R.dimen.padding_screen_borders)),
                 ) {
-
                     composable(
                         Destinations.Home.name,
                         enterTransition = {

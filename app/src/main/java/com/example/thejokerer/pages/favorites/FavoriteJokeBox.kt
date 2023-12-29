@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -27,8 +26,7 @@ import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
 @Composable
-fun FavoriteJokeBox(joke: Joke , showConfirmation : () -> Unit){
-
+fun FavoriteJokeBox(joke: Joke, showConfirmation: () -> Unit) {
     Box(
         modifier =
         Modifier
@@ -38,19 +36,23 @@ fun FavoriteJokeBox(joke: Joke , showConfirmation : () -> Unit){
             .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center,
     ) {
-        Row(modifier = Modifier.padding( horizontal =  10.dp)){
-
-            Box(modifier = Modifier
-                .fillMaxWidth(0.9f)
-                .padding(vertical = 10.dp)){
-                Text(text = joke.joke,
-                    color = MaterialTheme.colorScheme.onPrimary
+        Row(modifier = Modifier.padding(horizontal = 10.dp)) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.9f)
+                    .padding(vertical = 10.dp),
+            ) {
+                Text(
+                    text = joke.joke,
+                    color = MaterialTheme.colorScheme.onPrimary,
                 )
             }
 
-            Column(modifier = Modifier.padding( start = 3.dp),
-                verticalArrangement = Arrangement.Top){
-                IconButton(onClick = showConfirmation ) {
+            Column(
+                modifier = Modifier.padding(start = 3.dp),
+                verticalArrangement = Arrangement.Top,
+            ) {
+                IconButton(onClick = showConfirmation) {
                     Icon(
                         Icons.Default.Favorite,
                         contentDescription = stringResource(R.string.dislike_button),

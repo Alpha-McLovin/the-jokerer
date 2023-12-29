@@ -4,7 +4,7 @@ import com.example.thejokerer.model.Joke
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ApiJoke (
+data class ApiJoke(
     val joke: String,
 )
 fun ApiJoke.asDomainObject(): Joke = Joke(joke = joke)

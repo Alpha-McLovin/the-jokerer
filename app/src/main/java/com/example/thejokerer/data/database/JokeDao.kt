@@ -5,7 +5,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -18,11 +17,4 @@ interface JokeDao {
 
     @Query("SELECT * from jokes")
     fun getAllItems(): Flow<List<DbJoke>>
-
-//    @Query("SELECT * from jokes WHERE joke = :joke")
-//    fun getItem(joke: String): Flow<DbJoke>
-
-//    @Query("SELECT * from jokes ORDER BY joke ASC")
-//    fun getAllItems(): Flow<List<DbJoke>>
-
 }

@@ -18,17 +18,16 @@ import androidx.compose.ui.res.stringResource
 import com.example.thejokerer.R
 
 @Composable
-fun JokesBottomBar (showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
+fun JokesBottomBar(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
     BottomAppBar(
         containerColor = MaterialTheme.colorScheme.primaryContainer,
         contentColor = MaterialTheme.colorScheme.primary,
 
-        ) {
+    ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround,
         ) {
-
             IconButton(onClick = showHomePage) {
                 Icon(
                     Icons.Default.Home,

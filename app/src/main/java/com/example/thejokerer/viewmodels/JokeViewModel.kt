@@ -17,12 +17,11 @@ import com.example.thejokerer.states.FavoriteState
 import com.example.thejokerer.states.JokeApiState
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import okio.IOException
 
-class JokeViewModel ( private val jokeRepository: JokeRepository) : ViewModel() {
+class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
     var apiState: JokeApiState by mutableStateOf(JokeApiState.Loading)
         private set
 
@@ -40,19 +39,18 @@ class JokeViewModel ( private val jokeRepository: JokeRepository) : ViewModel() 
     }
 
 
-    fun getFavoriteJokes(){
+    fun getFavoriteJokes() {
         viewModelScope.launch {
-
             favoriteState = try {
                 uiListState = jokeRepository.getFavoriteJokes()
                     .stateIn(
-                    scope = viewModelScope,
-                started = SharingStarted.WhileSubscribed(5_000L),
-                    initialValue = listOf(),
-                )
+                        scope = viewModelScope,
+                        started = SharingStarted.WhileSubscribed(5_000L),
+                        initialValue = listOf(),
+                    )
                 FavoriteState.Success
-            } catch (e: IOException){
-                Log.e("favorite jokes" , e.message.toString())
+            } catch (e: IOException) {
+                Log.e("favorite jokes", e.message.toString())
                 FavoriteState.Error
             }
         }
