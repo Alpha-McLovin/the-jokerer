@@ -17,6 +17,16 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.thejokerer.R
 
+/**
+ * Composable function representing a custom bottom app bar.
+ *
+ * The `JokesBottomBar` composable displays two icons - one for navigating to the home page
+ * and another for navigating to the favorites page. Clicking on each icon triggers the
+ * corresponding action provided through the `showHomePage` and `showFavoritePage` parameters.
+ *
+ * @param showHomePage Callback function to be invoked when the home page icon is clicked.
+ * @param showFavoritePage Callback function to be invoked when the favorites page icon is clicked.
+ */
 @Composable
 fun JokesBottomBar(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
     BottomAppBar(
@@ -28,6 +38,8 @@ fun JokesBottomBar(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround,
         ) {
+
+            // Home Page Navigation Item
             IconButton(onClick = showHomePage) {
                 Icon(
                     Icons.Default.Home,
@@ -36,6 +48,7 @@ fun JokesBottomBar(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
                 )
             }
 
+            // Favorites Page Navigation Item
             IconButton(onClick = showFavoritePage) {
                 Icon(
                     Icons.Default.Favorite,

@@ -7,6 +7,12 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
+/**
+ *
+ * This interface is a DAO for managing jokes in the database
+ * and defines methods for inserting, deleting, and querying jokes.
+ *
+ */
 @Dao
 interface JokeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

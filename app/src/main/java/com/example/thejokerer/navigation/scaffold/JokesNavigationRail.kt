@@ -13,9 +13,21 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.example.thejokerer.R
 
+/**
+ * Composable function representing a custom navigation rail for navigation in landscape mode.
+ *
+ * The `JokesNavigationRail` composable displays two navigation items - one for navigating to the home page
+ * and another for navigating to the favorites page. Clicking on each item triggers the
+ * corresponding action provided through the `showHomePage` and `showFavoritePage` parameters.
+ *
+ * @param showHomePage Callback function to be invoked when the home page navigation item is clicked.
+ * @param showFavoritePage Callback function to be invoked when the favorites page navigation item is clicked.
+ */
 @Composable
 fun JokesNavigationRail(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
     NavigationRail {
+
+        // Home Page Navigation Item
         NavigationRailItem(
             selected = false,
             onClick = showHomePage,
@@ -28,6 +40,7 @@ fun JokesNavigationRail(showHomePage: () -> Unit, showFavoritePage: () -> Unit) 
             },
         )
 
+        // Favorites Page Navigation Item
         NavigationRailItem(
             selected = false,
             onClick = showFavoritePage,

@@ -26,6 +26,17 @@ import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
+
+/**
+ *
+ * This composable is the Box where you can see the joke and like it
+ *
+ * @param modifier the modifier passed down to adapt the component for screen orientation
+ * @param joke is the joke that will be displayed in the box
+ * @param likeJoke is the function that favorites a joke
+ * @param dislikeJoke is the function that removes a joke from favorites
+ *
+ */
 @Composable
 fun JokeBox(modifier: Modifier, joke: Joke, isFavorite: Boolean, likeJoke: () -> Unit, dislikeJoke: () -> Unit) {
     Box(

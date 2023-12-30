@@ -26,6 +26,15 @@ import com.example.thejokerer.navigation.scaffold.JokesTopBar
 import com.example.thejokerer.pages.favorites.FavoritesPage
 import com.example.thejokerer.pages.homepage.HomePage
 
+/**
+ * This composable represents the overall structure of the application.
+ *
+ * The `AppStructure` composable sets up the application layout based on the specified [navigationType].
+ * It includes top and bottom bars, navigation components, and hosts the content for different destinations.
+ *
+ * @param navigationType The type of navigation to be used, either [NavigationTypes.BOTTOM_NAVIGATION] or [NavigationTypes.NAVIGATION_RAIL] for portrait or landscape.
+ * @param navController The navigation controller to handle navigation between different destinations.
+ */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 @Composable
 fun AppStructure(

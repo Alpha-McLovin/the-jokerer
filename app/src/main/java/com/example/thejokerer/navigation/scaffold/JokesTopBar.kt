@@ -8,7 +8,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
-
+/**
+ * Composable function representing the top bar/header for the application.
+ *
+ * The top bar composable displays the title of the application
+ */
 @Composable
 fun JokesTopBar() {
     Row(
@@ -19,10 +23,5 @@ fun JokesTopBar() {
             text = "The Jokerer",
             color = MaterialTheme.colorScheme.primary,
         )
-//        Image(
-//            painterResource(R.drawable.title),
-//            "image",
-//            Modifier.width(100.dp),
-//        )
     }
 }

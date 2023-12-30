@@ -11,11 +11,32 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
+/**
+ * 
+ * This interface represents the application container
+ * 
+ * @property jokeRepository is the Jokerepository
+ * 
+ */
 interface AppContainer {
     val jokeRepository: JokeRepository
 }
 
-// container that takes care of dependencies
+/**
+ * 
+ *  container that takes care of the dependencies, implements the AppContainer
+ *
+ *  @property context the context
+ *  @property jokeRepository an instance of the JokeRepository
+ *  @property networkCheck uses the NetworkConnectionInterceptor to check the internet status
+ *  @property client the client
+ *  @property baseUrl the URL required to use the API
+ *  @property retrofit an retrofit instance
+ *  @property retrofitService and instance of the RetrofitService
+ *  @property jokeDb an instance of the joke database
+ * 
+ */
+
 class DefaultAppContainer(private val context: Context) : AppContainer {
 
     override val jokeRepository: JokeRepository by lazy {
