@@ -16,6 +16,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 
+/**
+ * This composable represents a set of buttons for fetching jokes of different categories.
+ *
+ * This composable is used for **PORTRAIT** mode screens
+ *
+ * @param getRandomJoke Function to fetch a random joke.
+ * @param getItJoke Function to fetch an IT-related joke.
+ * @param getDarkJoke Function to fetch a dark humor joke.
+ * @param getPun Function to fetch a pun.
+ * @param getMiscellaneous Function to fetch a miscellaneous joke.
+ */
 @Composable
 fun JokeButtons(
     getRandomJoke: () -> Unit,
@@ -80,6 +91,17 @@ fun JokeButtons(
     }
 }
 
+/**
+ * This composable represents a set of buttons for fetching jokes of different categories.
+ *
+ * This composable is used for **LANDSCAPE** mode screens
+ *
+ * @param getRandomJoke Function to fetch a random joke.
+ * @param getItJoke Function to fetch an IT-related joke.
+ * @param getDarkJoke Function to fetch a dark humor joke.
+ * @param getPun Function to fetch a pun.
+ * @param getMiscellaneous Function to fetch a miscellaneous joke.
+ */
 @Composable
 fun JokeButtonsLandscape(
     getRandomJoke: () -> Unit,

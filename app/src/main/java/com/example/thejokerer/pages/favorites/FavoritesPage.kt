@@ -26,6 +26,13 @@ import com.example.thejokerer.pages.shared.Title
 import com.example.thejokerer.states.FavoriteState
 import com.example.thejokerer.viewmodels.JokeViewModel
 
+/**
+ * This composable function is the Favorites page, displaying the list of favorite jokes.
+ *
+ * The `FavoritesPage` composable uses the [JokeViewModel] to observe the state of favorite jokes and displays
+ * them accordingly. It supports loading, error, and success states, and includes a list of favorite jokes with
+ * the ability to delete them. Additionally, it handles the case when there are no favorite jokes to display.
+ */
 @Composable
 fun FavoritesPage() {
     val jokeViewModel: JokeViewModel = viewModel(factory = JokeViewModel.Factory)

@@ -26,6 +26,14 @@ import androidx.compose.ui.window.Dialog
 import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
+/**
+ * This composable displays the [FavoriteJokeBox] composable with an optional confirmation
+ * dialog for deleting the displayed favorite joke. It uses a [Dialog] to prompt the user for confirmation before
+ * deleting the joke.
+ *
+ * @param joke The [Joke] object representing the favorite joke to be displayed.
+ * @param deleteJoke Callback function to be invoked when the user confirms the deletion of the favorite joke.
+ */
 @Composable
 fun FavoritesDisplay(joke: Joke, deleteJoke: () -> Unit) {
     var isVisible by rememberSaveable { mutableStateOf(false) }

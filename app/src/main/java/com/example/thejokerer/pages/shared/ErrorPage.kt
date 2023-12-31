@@ -16,6 +16,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 
+/**
+ * This shared composable function represents the `Error` page used to inform the user
+ * when an error occurs during the retrieval of jokes from the API.
+ */
 @Composable
 fun ErrorPage() {
     Row(

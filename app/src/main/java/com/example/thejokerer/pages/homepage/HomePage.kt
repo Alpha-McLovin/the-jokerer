@@ -32,6 +32,12 @@ import com.example.thejokerer.pages.shared.Title
 import com.example.thejokerer.states.JokeApiState
 import com.example.thejokerer.viewmodels.JokeViewModel
 
+/**
+ * This composable represents the Home page, displaying jokes fetched from the API.
+ *
+ * The `HomePage` composable uses the [JokeViewModel] to observe the state of API calls and displays
+ * jokes accordingly. It supports the following states: `loading`, `error`, `no internet` and `success`.
+ */
 @Composable
 fun HomePage() {
     val jokeViewModel: JokeViewModel = viewModel(factory = JokeViewModel.Factory)

@@ -16,6 +16,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 
+/**
+ * This shared composable function represents the `Loading` page used to inform the user
+ * when the page is loading (retrieving) a joke from the API.
+ */
 @Composable
 fun LoadingPage() {
     Row(

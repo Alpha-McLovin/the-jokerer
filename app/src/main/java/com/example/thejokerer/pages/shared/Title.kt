@@ -6,6 +6,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
+/**
+ * This shared composable function represents the `Title`
+ */
 @Composable
 fun Title(text: String) {
     Text(

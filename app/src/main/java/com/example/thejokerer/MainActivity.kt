@@ -14,7 +14,21 @@ import com.example.thejokerer.navigation.AppStructure
 import com.example.thejokerer.navigation.NavigationTypes
 import com.example.thejokerer.ui.theme.TheJokererTheme
 
+/**
+ * The main activity for the Joke Application.
+ *
+ * The `MainActivity` class extends [ComponentActivity] and serves as the entry point for the Joke Application.
+ * It sets up the Compose UI using the `setContent` function and determines the layout structure based on the
+ * window size.
+ */
 class MainActivity : ComponentActivity() {
+
+    /**
+     * Called when the activity is starting.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     * this Bundle contains the data it most recently supplied in [onSaveInstanceState].
+     */
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

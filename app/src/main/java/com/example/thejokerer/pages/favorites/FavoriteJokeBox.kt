@@ -25,6 +25,12 @@ import androidx.compose.ui.unit.dp
 import com.example.thejokerer.R
 import com.example.thejokerer.model.Joke
 
+/**
+ * This composable represents the box displaying a favorite joke with a button to remove a joke from favorites.
+ *
+ * @param joke The [Joke] object representing the favorite joke to be displayed in the box.
+ * @param showConfirmation function to invoke the confirmation dialog for removing the joke.
+ */
 @Composable
 fun FavoriteJokeBox(joke: Joke, showConfirmation: () -> Unit) {
     Box(
