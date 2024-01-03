@@ -2,6 +2,7 @@ package com.example.thejokerer
 import com.example.thejokerer.data.database.asDomainJokes
 import com.example.thejokerer.fake.FakeApiJokeRepository
 import com.example.thejokerer.fake.FakeDataSource
+import com.example.thejokerer.fake.FakeJokeApiService
 import com.example.thejokerer.model.Joke
 import com.example.thejokerer.states.JokeApiState
 import com.example.thejokerer.viewmodels.JokeViewModel
@@ -50,7 +51,7 @@ class JokeViewmodelTest {
     @Before
     fun init() = runTest {
         viewModel = JokeViewModel(
-            jokeRepository = FakeApiJokeRepository(),
+            jokeRepository = FakeApiJokeRepository(FakeJokeApiService()),
         )
 
         apiState = viewModel.apiState

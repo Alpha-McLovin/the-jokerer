@@ -23,5 +23,4 @@ class FakeJokeApiService : JokeApiService {
     override suspend fun getDarkJoke(): ApiJoke {
         return ApiJoke(FakeDataSource.joke2.joke)
     }
-
 }
