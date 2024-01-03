@@ -21,24 +21,51 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import okio.IOException
 
+
+/**
+ * ViewModel responsible for handling joke-related operation in the application.
+ *
+ * The `JokeViewModel` class extends [ViewModel] and provides methods for interacting with the
+ * JokeRepository to fetch jokes from the API, manage favorite jokes, and expose states for UI observation.
+ *
+ * @param jokeRepository The repository providing data access and management for jokes.
+ */
 class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
+
+    /**
+     * Represents the loading state of jokes fetched from the API.
+     */
     var apiState: JokeApiState by mutableStateOf(JokeApiState.Loading)
         private set
 
+    /**
+     * Represents the loading state of favorite jokes.
+     */
     var favoriteState: FavoriteState by mutableStateOf(FavoriteState.Loading)
         private set
 
+    /**
+     * Represents the current favorite state of a joke (whether it is favorite or not).
+     */
     var isFavoriteState: Boolean by mutableStateOf(false)
         private set
 
+    /**
+     * StateFlow representing the list of jokes for UI updates.
+     */
     lateinit var uiListState: StateFlow<List<Joke>>
 
+    /**
+     * Initializes the ViewModel by fetching both API jokes and favorite jokes.
+     */
     init {
         getApiJoke()
         getFavoriteJokes()
     }
 
-
+    /**
+     * Fetches favorite jokes from the repository and updates [uiListState].
+     */
     fun getFavoriteJokes() {
         viewModelScope.launch {
             favoriteState = try {
@@ -56,7 +83,9 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
         }
     }
 
-
+    /**
+     * Fetches a random joke from the API and updates [apiState].
+     */
     fun getApiJoke() {
         viewModelScope.launch {
             apiState = try {
@@ -71,6 +100,10 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
         }
     }
 
+
+    /**
+     * Fetches an IT related joke from the API and updates [apiState].
+     */
     fun getApiItJoke() {
         viewModelScope.launch {
             apiState = try {
@@ -85,6 +118,9 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
         }
     }
 
+    /**
+     * Fetches a dark humor joke from the API and updates [apiState].
+     */
     fun getApiDarkJoke() {
         viewModelScope.launch {
             apiState = try {
@@ -99,6 +135,9 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
         }
     }
 
+    /**
+     * Fetches a pun from the API and updates [apiState].
+     */
     fun getApiPun() {
         viewModelScope.launch {
             apiState = try {
@@ -113,6 +152,9 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
         }
     }
 
+    /**
+     * Fetches a miscellaneous joke from the API and updates [apiState].
+     */
     fun getApiMiscelleaneous() {
         viewModelScope.launch {
             apiState = try {
@@ -128,7 +170,11 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
     }
 
 
-
+    /**
+     * Adds a joke to the favorites list.
+     *
+     * @param joke The joke to be added to favorites.
+     */
     fun addFavorite(joke: Joke) {
         viewModelScope.launch {
             try {
@@ -139,6 +185,12 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
             }
         }
     }
+
+    /**
+     * Removes a joke from the favorites list.
+     *
+     * @param joke The joke to be removed from favorites.
+     */
 
     fun removeFavorite(joke: Joke) {
         viewModelScope.launch {
@@ -152,7 +204,9 @@ class JokeViewModel(private val jokeRepository: JokeRepository) : ViewModel() {
     }
 
 
-
+    /**
+     * Companion object holding a ViewModelProvider.Factory for creating instances of [JokeViewModel].
+     */
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
