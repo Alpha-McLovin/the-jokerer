@@ -38,7 +38,7 @@ import com.example.thejokerer.model.Joke
  *
  */
 @Composable
-fun JokeBox(modifier: Modifier, joke: Joke, isFavorite: Boolean, likeJoke: () -> Unit, dislikeJoke: () -> Unit) {
+fun JokeBox(modifier: Modifier = Modifier, joke: Joke, isFavorite: Boolean, likeJoke: () -> Unit, dislikeJoke: () -> Unit) {
     Box(
         modifier =
         modifier

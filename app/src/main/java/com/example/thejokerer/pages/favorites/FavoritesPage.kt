@@ -73,7 +73,7 @@ fun FavoritesPage() {
                         )
                     }
                 } else {
-                    LazyColumn() {
+                    LazyColumn {
                         item {
                             Title(text = stringResource(R.string.favorite_jokes_title))
                         }

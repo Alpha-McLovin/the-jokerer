@@ -2,8 +2,8 @@
     <string name="app_name">The Jokerer</string>
 
 
-    <string name="appbar_icon_home_description">ga naar Home</string>
-    <string name="appbar_icon_favorites_description">ga naar Todo</string>
+    <string name="appbar_icon_home_description">go to home</string>
+    <string name="appbar_icon_favorites_description">go to favorites</string>
 
 <!--    Strings voor homepage   -->
 
@@ -19,7 +19,7 @@ Maybe this spaghetti code is the Joke after all? </string>
     <string name="refresh_message"> Reload </string>
 
     <!-- normal screen -->
-    <string name="home_page_title"> Welcome! </string>
+    <string name="home_page_title">Welcome!</string>
     <string name="home_page_introduction"> Enjoy some of our most funniest jokes and take a laughing break. </string>
     <string name="dislike_button">Dislike Button</string>
     <string name="like_button">Like Button</string>

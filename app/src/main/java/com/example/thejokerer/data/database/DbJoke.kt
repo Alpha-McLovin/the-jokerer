@@ -42,3 +42,12 @@ fun List<DbJoke>.asDomainJokes(): List<Joke> {
     }
     return jokeList
 }
+
+/**
+ *
+ * This helper function converts each joke from a DbJoke to a domain joke
+ *
+ * @return a domain joke
+ *
+ */
+fun DbJoke.asDomainJoke() = Joke(joke = joke)

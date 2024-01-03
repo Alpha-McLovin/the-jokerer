@@ -77,6 +77,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("androidx.navigation:navigation-testing:2.7.6")
+    implementation("androidx.media3:media3-test-utils:1.2.0")
 
     // room
     val room_version = "2.5.0"
@@ -92,6 +94,9 @@ dependencies {
     // optional - Test helpers
     testImplementation("androidx.room:room-testing:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     testImplementation("junit:junit:4.13.2")

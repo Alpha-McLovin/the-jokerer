@@ -38,7 +38,6 @@ fun JokesBottomBar(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround,
         ) {
-
             // Home Page Navigation Item
             IconButton(onClick = showHomePage) {
                 Icon(
