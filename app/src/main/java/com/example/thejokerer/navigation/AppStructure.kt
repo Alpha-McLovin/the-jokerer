@@ -58,7 +58,17 @@ fun AppStructure(
             },
             bottomBar = {
                 JokesBottomBar(
-                    showHomePage = { if (canNavigate(currentBackStack, Destinations.Home.name)) navController.navigate(Destinations.Home.name) },
+                    showHomePage = {
+                        if (canNavigate(currentBackStack, Destinations.Home.name)) {
+                            navController.navigate(Destinations.Home.name) {
+                                popUpTo(Destinations.Home.name) {
+                                    inclusive = false
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    },
                     showFavoritePage = { if (canNavigate(currentBackStack, Destinations.Favorites.name)) navController.navigate(Destinations.Favorites.name) },
                 )
             },
@@ -109,7 +119,17 @@ fun AppStructure(
         Row {
             AnimatedVisibility(visible = navigationType == NavigationTypes.NAVIGATION_RAIL) {
                 JokesNavigationRail(
-                    showHomePage = { if (canNavigate(currentBackStack, Destinations.Home.name)) navController.navigate(Destinations.Home.name) },
+                    showHomePage = {
+                        if (canNavigate(currentBackStack, Destinations.Home.name)) {
+                            navController.navigate(Destinations.Home.name) {
+                                popUpTo(Destinations.Home.name) {
+                                    inclusive = false
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    },
                     showFavoritePage = { if (canNavigate(currentBackStack, Destinations.Favorites.name)) navController.navigate(Destinations.Favorites.name) },
                 )
             }
