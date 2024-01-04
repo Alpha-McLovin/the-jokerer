@@ -16,6 +16,7 @@ Category of jokes:
 * Puns
 * Miscellaneous Jokes
 * Dark humor Jokes
+  
 Of course you can also generate a random joke of any category.
 
 Have fun!
