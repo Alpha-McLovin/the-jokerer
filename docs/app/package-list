@@ -1,0 +1,154 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.thejokerer.data.database////PointingToDeclaration/app/com.example.thejokerer.data.database/index.html
+$dokka.location:com.example.thejokerer.data.database//asDbJoke/com.example.thejokerer.model.Joke#/PointingToDeclaration/app/com.example.thejokerer.data.database/as-db-joke.html
+$dokka.location:com.example.thejokerer.data.database//asDomainJoke/com.example.thejokerer.data.database.DbJoke#/PointingToDeclaration/app/com.example.thejokerer.data.database/as-domain-joke.html
+$dokka.location:com.example.thejokerer.data.database//asDomainJokes/kotlin.collections.List[com.example.thejokerer.data.database.DbJoke]#/PointingToDeclaration/app/com.example.thejokerer.data.database/as-domain-jokes.html
+$dokka.location:com.example.thejokerer.data.database/DbJoke///PointingToDeclaration/app/com.example.thejokerer.data.database/-db-joke/index.html
+$dokka.location:com.example.thejokerer.data.database/DbJoke/DbJoke/#kotlin.String#kotlin.Boolean/PointingToDeclaration/app/com.example.thejokerer.data.database/-db-joke/-db-joke.html
+$dokka.location:com.example.thejokerer.data.database/DbJoke/favorite/#/PointingToDeclaration/app/com.example.thejokerer.data.database/-db-joke/favorite.html
+$dokka.location:com.example.thejokerer.data.database/DbJoke/joke/#/PointingToDeclaration/app/com.example.thejokerer.data.database/-db-joke/joke.html
+$dokka.location:com.example.thejokerer.data.database/JokeDao///PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-dao/index.html
+$dokka.location:com.example.thejokerer.data.database/JokeDao/delete/#com.example.thejokerer.data.database.DbJoke/PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-dao/delete.html
+$dokka.location:com.example.thejokerer.data.database/JokeDao/getAllItems/#/PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-dao/get-all-items.html
+$dokka.location:com.example.thejokerer.data.database/JokeDao/insert/#com.example.thejokerer.data.database.DbJoke/PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-dao/insert.html
+$dokka.location:com.example.thejokerer.data.database/JokeDb///PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-db/index.html
+$dokka.location:com.example.thejokerer.data.database/JokeDb/JokeDb/#/PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-db/-joke-db.html
+$dokka.location:com.example.thejokerer.data.database/JokeDb/jokeDao/#/PointingToDeclaration/app/com.example.thejokerer.data.database/-joke-db/joke-dao.html
+$dokka.location:com.example.thejokerer.data////PointingToDeclaration/app/com.example.thejokerer.data/index.html
+$dokka.location:com.example.thejokerer.data/AppContainer///PointingToDeclaration/app/com.example.thejokerer.data/-app-container/index.html
+$dokka.location:com.example.thejokerer.data/AppContainer/jokeRepository/#/PointingToDeclaration/app/com.example.thejokerer.data/-app-container/joke-repository.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository///PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/index.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/CachingJokesRepository/#com.example.thejokerer.data.database.JokeDao#com.example.thejokerer.network.JokeApiService#android.content.Context/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/-caching-jokes-repository.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/deleteFavoriteJoke/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/delete-favorite-joke.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/getFavoriteJokes/#/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/get-favorite-jokes.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/getNewDarkJoke/#/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/get-new-dark-joke.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/getNewItJoke/#/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/get-new-it-joke.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/getNewJoke/#/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/get-new-joke.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/getNewMiscellaneous/#/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/get-new-miscellaneous.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/getNewPun/#/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/get-new-pun.html
+$dokka.location:com.example.thejokerer.data/CachingJokesRepository/insertFavoriteJoke/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.data/-caching-jokes-repository/insert-favorite-joke.html
+$dokka.location:com.example.thejokerer.data/DefaultAppContainer///PointingToDeclaration/app/com.example.thejokerer.data/-default-app-container/index.html
+$dokka.location:com.example.thejokerer.data/DefaultAppContainer/DefaultAppContainer/#android.content.Context/PointingToDeclaration/app/com.example.thejokerer.data/-default-app-container/-default-app-container.html
+$dokka.location:com.example.thejokerer.data/DefaultAppContainer/jokeRepository/#/PointingToDeclaration/app/com.example.thejokerer.data/-default-app-container/joke-repository.html
+$dokka.location:com.example.thejokerer.data/JokeRepository///PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/index.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/deleteFavoriteJoke/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/delete-favorite-joke.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/getFavoriteJokes/#/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/get-favorite-jokes.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/getNewDarkJoke/#/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/get-new-dark-joke.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/getNewItJoke/#/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/get-new-it-joke.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/getNewJoke/#/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/get-new-joke.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/getNewMiscellaneous/#/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/get-new-miscellaneous.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/getNewPun/#/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/get-new-pun.html
+$dokka.location:com.example.thejokerer.data/JokeRepository/insertFavoriteJoke/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.data/-joke-repository/insert-favorite-joke.html
+$dokka.location:com.example.thejokerer.model////PointingToDeclaration/app/com.example.thejokerer.model/index.html
+$dokka.location:com.example.thejokerer.model/Joke///PointingToDeclaration/app/com.example.thejokerer.model/-joke/index.html
+$dokka.location:com.example.thejokerer.model/Joke/Joke/#kotlin.String#kotlin.Boolean/PointingToDeclaration/app/com.example.thejokerer.model/-joke/-joke.html
+$dokka.location:com.example.thejokerer.model/Joke/favorite/#/PointingToDeclaration/app/com.example.thejokerer.model/-joke/favorite.html
+$dokka.location:com.example.thejokerer.model/Joke/joke/#/PointingToDeclaration/app/com.example.thejokerer.model/-joke/joke.html
+$dokka.location:com.example.thejokerer.navigation.scaffold////PointingToDeclaration/app/com.example.thejokerer.navigation.scaffold/index.html
+$dokka.location:com.example.thejokerer.navigation.scaffold//JokesBottomBar/#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.navigation.scaffold/-jokes-bottom-bar.html
+$dokka.location:com.example.thejokerer.navigation.scaffold//JokesNavigationRail/#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.navigation.scaffold/-jokes-navigation-rail.html
+$dokka.location:com.example.thejokerer.navigation.scaffold//JokesTopBar/#/PointingToDeclaration/app/com.example.thejokerer.navigation.scaffold/-jokes-top-bar.html
+$dokka.location:com.example.thejokerer.navigation////PointingToDeclaration/app/com.example.thejokerer.navigation/index.html
+$dokka.location:com.example.thejokerer.navigation//AppStructure/#com.example.thejokerer.navigation.NavigationTypes#androidx.navigation.NavHostController/PointingToDeclaration/app/com.example.thejokerer.navigation/-app-structure.html
+$dokka.location:com.example.thejokerer.navigation//canNavigate/#androidx.navigation.NavBackStackEntry?#kotlin.String/PointingToDeclaration/app/com.example.thejokerer.navigation/can-navigate.html
+$dokka.location:com.example.thejokerer.navigation/Destinations.Favorites///PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/-favorites/index.html
+$dokka.location:com.example.thejokerer.navigation/Destinations.Favorites/name/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/-favorites/name.html
+$dokka.location:com.example.thejokerer.navigation/Destinations.Favorites/ordinal/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/-favorites/ordinal.html
+$dokka.location:com.example.thejokerer.navigation/Destinations.Home///PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/-home/index.html
+$dokka.location:com.example.thejokerer.navigation/Destinations.Home/name/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/-home/name.html
+$dokka.location:com.example.thejokerer.navigation/Destinations.Home/ordinal/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/-home/ordinal.html
+$dokka.location:com.example.thejokerer.navigation/Destinations///PointingToDeclaration/app/com.example.thejokerer.navigation/-destinations/index.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes.BOTTOM_NAVIGATION///PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/-b-o-t-t-o-m_-n-a-v-i-g-a-t-i-o-n/index.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes.BOTTOM_NAVIGATION/name/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/-b-o-t-t-o-m_-n-a-v-i-g-a-t-i-o-n/name.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes.BOTTOM_NAVIGATION/ordinal/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/-b-o-t-t-o-m_-n-a-v-i-g-a-t-i-o-n/ordinal.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes.NAVIGATION_RAIL///PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/-n-a-v-i-g-a-t-i-o-n_-r-a-i-l/index.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes.NAVIGATION_RAIL/name/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/-n-a-v-i-g-a-t-i-o-n_-r-a-i-l/name.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes.NAVIGATION_RAIL/ordinal/#/PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/-n-a-v-i-g-a-t-i-o-n_-r-a-i-l/ordinal.html
+$dokka.location:com.example.thejokerer.navigation/NavigationTypes///PointingToDeclaration/app/com.example.thejokerer.navigation/-navigation-types/index.html
+$dokka.location:com.example.thejokerer.network////PointingToDeclaration/app/com.example.thejokerer.network/index.html
+$dokka.location:com.example.thejokerer.network//asDomainObject/com.example.thejokerer.network.ApiJoke#/PointingToDeclaration/app/com.example.thejokerer.network/as-domain-object.html
+$dokka.location:com.example.thejokerer.network/ApiJoke///PointingToDeclaration/app/com.example.thejokerer.network/-api-joke/index.html
+$dokka.location:com.example.thejokerer.network/ApiJoke/ApiJoke/#kotlin.String/PointingToDeclaration/app/com.example.thejokerer.network/-api-joke/-api-joke.html
+$dokka.location:com.example.thejokerer.network/ApiJoke/joke/#/PointingToDeclaration/app/com.example.thejokerer.network/-api-joke/joke.html
+$dokka.location:com.example.thejokerer.network/JokeApiService///PointingToDeclaration/app/com.example.thejokerer.network/-joke-api-service/index.html
+$dokka.location:com.example.thejokerer.network/JokeApiService/getDarkJoke/#/PointingToDeclaration/app/com.example.thejokerer.network/-joke-api-service/get-dark-joke.html
+$dokka.location:com.example.thejokerer.network/JokeApiService/getItJoke/#/PointingToDeclaration/app/com.example.thejokerer.network/-joke-api-service/get-it-joke.html
+$dokka.location:com.example.thejokerer.network/JokeApiService/getJoke/#/PointingToDeclaration/app/com.example.thejokerer.network/-joke-api-service/get-joke.html
+$dokka.location:com.example.thejokerer.network/JokeApiService/getMiscellaneousJoke/#/PointingToDeclaration/app/com.example.thejokerer.network/-joke-api-service/get-miscellaneous-joke.html
+$dokka.location:com.example.thejokerer.network/JokeApiService/getPun/#/PointingToDeclaration/app/com.example.thejokerer.network/-joke-api-service/get-pun.html
+$dokka.location:com.example.thejokerer.network/NetworkConnectionInterceptor///PointingToDeclaration/app/com.example.thejokerer.network/-network-connection-interceptor/index.html
+$dokka.location:com.example.thejokerer.network/NetworkConnectionInterceptor/NetworkConnectionInterceptor/#android.content.Context/PointingToDeclaration/app/com.example.thejokerer.network/-network-connection-interceptor/-network-connection-interceptor.html
+$dokka.location:com.example.thejokerer.network/NetworkConnectionInterceptor/intercept/#okhttp3.Interceptor.Chain/PointingToDeclaration/app/com.example.thejokerer.network/-network-connection-interceptor/intercept.html
+$dokka.location:com.example.thejokerer.pages.favorites////PointingToDeclaration/app/com.example.thejokerer.pages.favorites/index.html
+$dokka.location:com.example.thejokerer.pages.favorites//FavoriteJokeBox/#com.example.thejokerer.model.Joke#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.pages.favorites/-favorite-joke-box.html
+$dokka.location:com.example.thejokerer.pages.favorites//FavoritesDisplay/#com.example.thejokerer.model.Joke#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.pages.favorites/-favorites-display.html
+$dokka.location:com.example.thejokerer.pages.favorites//FavoritesPage/#/PointingToDeclaration/app/com.example.thejokerer.pages.favorites/-favorites-page.html
+$dokka.location:com.example.thejokerer.pages.homepage////PointingToDeclaration/app/com.example.thejokerer.pages.homepage/index.html
+$dokka.location:com.example.thejokerer.pages.homepage//HomePage/#/PointingToDeclaration/app/com.example.thejokerer.pages.homepage/-home-page.html
+$dokka.location:com.example.thejokerer.pages.homepage//JokeBox/#androidx.compose.ui.Modifier#com.example.thejokerer.model.Joke#kotlin.Boolean#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.pages.homepage/-joke-box.html
+$dokka.location:com.example.thejokerer.pages.homepage//JokeButtons/#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.pages.homepage/-joke-buttons.html
+$dokka.location:com.example.thejokerer.pages.homepage//JokeButtonsLandscape/#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.pages.homepage/-joke-buttons-landscape.html
+$dokka.location:com.example.thejokerer.pages.shared////PointingToDeclaration/app/com.example.thejokerer.pages.shared/index.html
+$dokka.location:com.example.thejokerer.pages.shared//ErrorPage/#/PointingToDeclaration/app/com.example.thejokerer.pages.shared/-error-page.html
+$dokka.location:com.example.thejokerer.pages.shared//LoadingPage/#/PointingToDeclaration/app/com.example.thejokerer.pages.shared/-loading-page.html
+$dokka.location:com.example.thejokerer.pages.shared//Title/#kotlin.String/PointingToDeclaration/app/com.example.thejokerer.pages.shared/-title.html
+$dokka.location:com.example.thejokerer.states////PointingToDeclaration/app/com.example.thejokerer.states/index.html
+$dokka.location:com.example.thejokerer.states/FavoriteState.Error///PointingToDeclaration/app/com.example.thejokerer.states/-favorite-state/-error/index.html
+$dokka.location:com.example.thejokerer.states/FavoriteState.Loading///PointingToDeclaration/app/com.example.thejokerer.states/-favorite-state/-loading/index.html
+$dokka.location:com.example.thejokerer.states/FavoriteState.Success///PointingToDeclaration/app/com.example.thejokerer.states/-favorite-state/-success/index.html
+$dokka.location:com.example.thejokerer.states/FavoriteState///PointingToDeclaration/app/com.example.thejokerer.states/-favorite-state/index.html
+$dokka.location:com.example.thejokerer.states/JokeApiState.Error///PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/-error/index.html
+$dokka.location:com.example.thejokerer.states/JokeApiState.Loading///PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/-loading/index.html
+$dokka.location:com.example.thejokerer.states/JokeApiState.NoInternet///PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/-no-internet/index.html
+$dokka.location:com.example.thejokerer.states/JokeApiState.Success///PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/-success/index.html
+$dokka.location:com.example.thejokerer.states/JokeApiState.Success/Success/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/-success/-success.html
+$dokka.location:com.example.thejokerer.states/JokeApiState.Success/joke/#/PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/-success/joke.html
+$dokka.location:com.example.thejokerer.states/JokeApiState///PointingToDeclaration/app/com.example.thejokerer.states/-joke-api-state/index.html
+$dokka.location:com.example.thejokerer.ui.theme////PointingToDeclaration/app/com.example.thejokerer.ui.theme/index.html
+$dokka.location:com.example.thejokerer.ui.theme//Pink40/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-pink40.html
+$dokka.location:com.example.thejokerer.ui.theme//Pink80/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-pink80.html
+$dokka.location:com.example.thejokerer.ui.theme//Purple40/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-purple40.html
+$dokka.location:com.example.thejokerer.ui.theme//Purple80/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-purple80.html
+$dokka.location:com.example.thejokerer.ui.theme//PurpleGrey40/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-purple-grey40.html
+$dokka.location:com.example.thejokerer.ui.theme//PurpleGrey80/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-purple-grey80.html
+$dokka.location:com.example.thejokerer.ui.theme//TheJokererTheme/#kotlin.Boolean#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-the-jokerer-theme.html
+$dokka.location:com.example.thejokerer.ui.theme//Typography/#/PointingToDeclaration/app/com.example.thejokerer.ui.theme/-typography.html
+$dokka.location:com.example.thejokerer.viewmodels////PointingToDeclaration/app/com.example.thejokerer.viewmodels/index.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel.Companion///PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/-companion/index.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel.Companion/Factory/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/-companion/-factory.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel///PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/index.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/JokeViewModel/#com.example.thejokerer.data.JokeRepository/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/-joke-view-model.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/addFavorite/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/add-favorite.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/apiState/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/api-state.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/favoriteState/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/favorite-state.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/getApiDarkJoke/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/get-api-dark-joke.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/getApiItJoke/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/get-api-it-joke.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/getApiJoke/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/get-api-joke.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/getApiMiscelleaneous/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/get-api-miscelleaneous.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/getApiPun/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/get-api-pun.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/getFavoriteJokes/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/get-favorite-jokes.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/isFavoriteState/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/is-favorite-state.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/removeFavorite/#com.example.thejokerer.model.Joke/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/remove-favorite.html
+$dokka.location:com.example.thejokerer.viewmodels/JokeViewModel/uiListState/#/PointingToDeclaration/app/com.example.thejokerer.viewmodels/-joke-view-model/ui-list-state.html
+$dokka.location:com.example.thejokerer////PointingToDeclaration/app/com.example.thejokerer/index.html
+$dokka.location:com.example.thejokerer/JokeApplication///PointingToDeclaration/app/com.example.thejokerer/-joke-application/index.html
+$dokka.location:com.example.thejokerer/JokeApplication/JokeApplication/#/PointingToDeclaration/app/com.example.thejokerer/-joke-application/-joke-application.html
+$dokka.location:com.example.thejokerer/JokeApplication/container/#/PointingToDeclaration/app/com.example.thejokerer/-joke-application/container.html
+$dokka.location:com.example.thejokerer/JokeApplication/onCreate/#/PointingToDeclaration/app/com.example.thejokerer/-joke-application/on-create.html
+$dokka.location:com.example.thejokerer/MainActivity///PointingToDeclaration/app/com.example.thejokerer/-main-activity/index.html
+$dokka.location:com.example.thejokerer/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.thejokerer/-main-activity/-main-activity.html
+com.example.thejokerer
+com.example.thejokerer.data
+com.example.thejokerer.data.database
+com.example.thejokerer.model
+com.example.thejokerer.navigation
+com.example.thejokerer.navigation.scaffold
+com.example.thejokerer.network
+com.example.thejokerer.pages.favorites
+com.example.thejokerer.pages.homepage
+com.example.thejokerer.pages.shared
+com.example.thejokerer.states
+com.example.thejokerer.ui.theme
+com.example.thejokerer.viewmodels
+
