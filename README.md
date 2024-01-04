@@ -3,7 +3,7 @@
 
 Online documentation : https://alpha-mclovin.github.io/the-jokerer/
 
-Hi, my name is Emilio and i made this joke app for a school project.
+Hi, my name is Emilio and I made this mobile joke application for a school project.
 
 The app gives you the ability to generate jokes and save them as favorite.
 
@@ -16,7 +16,7 @@ Category of jokes:
 * Puns
 * Miscellaneous Jokes
 * Dark humor Jokes
-Of course when you can also generate a random joke of any category.
+Of course you can also generate a random joke of any category.
 
 Have fun!
 
