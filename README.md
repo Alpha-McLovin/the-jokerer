@@ -22,4 +22,4 @@ Of course you can also generate a random joke of any category.
 Have fun!
 
 
-<sub> created by: Emilio Tena Romero </sub> 
+<sub> **created by: Emilio Tena Romero** </sub> 
