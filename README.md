@@ -21,3 +21,5 @@ Of course you can also generate a random joke of any category.
 
 Have fun!
 
+
+##### created by: Emilio Tena Romero
