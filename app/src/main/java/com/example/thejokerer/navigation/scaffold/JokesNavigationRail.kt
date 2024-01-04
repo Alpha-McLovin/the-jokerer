@@ -26,7 +26,6 @@ import com.example.thejokerer.R
 @Composable
 fun JokesNavigationRail(showHomePage: () -> Unit, showFavoritePage: () -> Unit) {
     NavigationRail {
-
         // Home Page Navigation Item
         NavigationRailItem(
             selected = false,

@@ -15,12 +15,28 @@ import kotlinx.coroutines.flow.Flow
  */
 @Dao
 interface JokeDao {
+
+    /**
+     * Inserts a joke into the `jokes` table or replaces it if it already exists.
+     *
+     * @param item The joke to be inserted or replaced.
+     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(item: DbJoke)
 
+    /**
+     * Deletes a joke from the `jokes` table.
+     *
+     * @param item The joke to be deleted.
+     */
     @Delete
     suspend fun delete(item: DbJoke)
 
+    /**
+     * Retrieves all jokes from the `jokes` table as a flow of lists
+     *
+     * @return A [Flow] emitting lists of [DbJoke] items.
+     */
     @Query("SELECT * from jokes")
     fun getAllItems(): Flow<List<DbJoke>>
 }
