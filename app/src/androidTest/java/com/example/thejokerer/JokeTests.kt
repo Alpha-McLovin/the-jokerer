@@ -97,13 +97,5 @@ class JokeTests {
             .onNodeWithContentDescription("Dislike Button")
             .assertDoesNotExist()
     }
-
-
-
-    // adding favorite joke test
-
-
-
-    // removing a joke from favorites test
 } 
 
