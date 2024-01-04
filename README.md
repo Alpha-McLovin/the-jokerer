@@ -1,7 +1,7 @@
 # The Jokerer
-## A very funny joke app to take laughing breaks!
-
 Online documentation : https://alpha-mclovin.github.io/the-jokerer/
+
+## A very funny joke app to take laughing breaks!
 
 Hi, my name is Emilio and I made this mobile joke application for a school project.
 
